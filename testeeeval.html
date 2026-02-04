@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Pour l'amour de ma vie ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #f9ecec, #d78484);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        font-family: 'Playfair Display', serif;
+    }
+
+    /* Coeurs flottants */
+    .heart {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: rgba(255,255,255,0.7);
+        transform: rotate(45deg);
+        animation: float 8s infinite ease-in;
+    }
+
+    .heart::before,
+    .heart::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: rgba(255,255,255,0.7);
+        border-radius: 50%;
+    }
+
+    .heart::before {
+        top: -10px;
+        left: 0;
+    }
+
+    .heart::after {
+        left: -10px;
+        top: 0;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(100vh) rotate(45deg);
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-10vh) rotate(45deg);
+            opacity: 0;
+        }
+    }
+
+    /* Carte */
+    .card {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        border-radius: 25px;
+        padding: 50px;
+        max-width: 600px;
+        text-align: center;
+        color: white;
+        box-shadow: 0 0 40px rgba(255, 0, 100, 0.4);
+        animation: fadeIn 3s ease;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    h1 {
+        font-family: 'Great Vibes', cursive;
+        font-size: 64px;
+        margin-bottom: 20px;
+        text-shadow: 0 0 15px rgba(255,255,255,0.8);
+    }
+
+    p {
+        font-size: 20px;
+        line-height: 1.7;
+        margin-bottom: 30px;
+        animation: textGlow 4s infinite alternate;
+    }
+
+    @keyframes textGlow {
+        from {
+            text-shadow: 0 0 5px rgba(255,255,255,0.3);
+        }
+        to {
+            text-shadow: 0 0 20px rgba(255,255,255,0.8);
+        }
+    }
+
+    .signature {
+        font-family: 'Great Vibes', cursive;
+        font-size: 36px;
+        margin-top: 30px;
+    }
+
+    .pulse-heart {
+        font-size: 40px;
+        animation: pulse 1.5s infinite;
+        display: inline-block;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.3); }
+        100% { transform: scale(1); }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Coeurs animés -->
+<script>
+    for (let i = 0; i < 20; i++) {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDelay = Math.random() * 8 + "s";
+        heart.style.width = heart.style.height = (10 + Math.random() * 20) + "px";
+        document.body.appendChild(heart);
+    }
+</script>
+
+<div class="card">
+    <h1>Mon mimi d'amour</h1>
+
+    <p>
+        Chaque battement de mon cœur murmure ton prénom.<br>
+        Tu es mon refuge, ma force, mon éternité.<br><br>
+
+        À tes côtés, le temps s’arrête, le monde s’illumine,<br>
+        et mon âme a trouvé sa maison.<br><br>
+
+        Merci d’exister, merci de m’aimer,<br>
+        aujourd’hui, demain et pour toujours.
+    </p>
+
+    <div class="pulse-heart">❤️</div>
+
+    <div class="signature">
+        Ta femme et ta mimi, pour l’éternité
+    </div>
+</div>
+
+</body>
+</html>
